@@ -90,4 +90,44 @@ const cypher = (function(){
     }
     return {encode,decode}
 })();
-export {capitalize,reverseString,calculator,cypher}
+
+const analyseArray = function(input){
+    const getNum = function(array,isMax)
+    {
+        let number = null;
+        for(let i = 0; i<array.length;i++)
+        {
+         if(number == null)
+         {
+            number = array[i]
+         }
+         if(isMax == true && array[i] > number)
+         {
+            number = array[i]
+         }
+         else if(array[i] < number)
+         {
+            number = array[i]
+         }
+        }
+        return number
+    }
+    const getAverage = function(input)
+    {
+        let result = 0;
+        input.forEach(element => {
+            result += element
+        });
+        return result/input.length
+    }
+    const min = getNum(input,false)
+    const max = getNum(input,true)
+    const length = input.length
+    const average = getAverage(input)
+
+
+    return{min,max,length,average}
+
+
+}
+export {capitalize,reverseString,calculator,cypher,analyseArray}

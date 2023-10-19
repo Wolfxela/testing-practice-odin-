@@ -1,4 +1,4 @@
-import { capitalize,reverseString,calculator,cypher } from "./script";
+import { capitalize,reverseString,calculator,cypher,analyseArray } from "./script";
 
 test('capitalize first letter of word even if the letter is already capitalized',()=>{
     expect(capitalize("Fox")).toBe("Fox")
@@ -48,6 +48,26 @@ test('decode said words given the key 1',()=>{
 })
 test('decode said words given the key 1',()=>{
     expect(cypher.decode("jgnnq k pggf ngvvweg",2)).toBe("hello i need lettuce")
+})
+test('decode said words given the key 1',()=>{
+    expect(cypher.decode("jgnnq k pggf ngvvweg",2)).toBe("hello i need lettuce")
+})
+
+test('test if min is right',()=>{
+    const object = analyseArray([2,3,5])
+    expect(object.min).toBe(2)
+})
+test('test if max is right',()=>{
+    const object = analyseArray([2,3,5])
+    expect(object.max).toBe(5)
+})
+test('test if length is right',()=>{
+    const object = analyseArray([2,3,5])
+    expect(object.length).toBe(3)
+})
+test('test if average is right',()=>{
+    const object = analyseArray([2,3,5])
+    expect(object.average).toBeCloseTo(3.333333)
 })
 
 
